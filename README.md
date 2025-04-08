@@ -17,4 +17,4 @@ git push origin main
 
 > Vista previa del index.html
 
-[Image](https://raw.githubusercontent.com/Sandra-De-La-Sancha/CH53_EjercicioDOM/refs/heads/main/Imagenes/index.png)
+![index] (https://raw.githubusercontent.com/Sandra-De-La-Sancha/CH53_EjercicioDOM/refs/heads/main/Imagenes/index.png)
