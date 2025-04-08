@@ -34,8 +34,30 @@ btnMostrar.addEventListener("click", function(event){
 
     let element2 = element.cloneNode(true);
 
-    listas.item(0).before(element);
-    listas.item(0).prepend(element);
+   // listas.item(0).before(element);
+    //listas.item(0).prepend(element);
+
+    //afterbegin Inserta el elemento al principio de la lista
+   // listas.item(1).insertAdjacentElement("afterbegin",elemen);
+   ///beforeend inserta el elemento al final de la lista
+   // istas.item(1).insertAdjacentElement("beforeend",element2);
+
+   listas.item(1).insertAdjacentHTML("beforebegin",
+    `<li class="list-group-item">Before Begin item</li>` );
     
+    listas.item(1).insertAdjacentHTML("afterend",
+        `<li class="list-group-item">
+        After end item
+        </li>` );
+
+        listas.item(1).insertAdjacentHTML("afterbegin",
+            `<li class="list-group-item">
+            After begin item
+            </li>` );
+
+            listas.item(1).insertAdjacentHTML("beforeend",
+                `<li class="list-group-item">
+                Before end item
+                </li>` );
     
 });
