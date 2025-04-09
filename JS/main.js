@@ -1,7 +1,12 @@
+////////////////////////VARIABLES////////////////////////////////////////////////////////////////////
+
 let btnMostrar = document.getElementById("btnMostrar");
 let encabezado1 = document.getElementById("encabezado1");
 let encabezado2 = document.getElementById("encabezado2");
 let listas = document.getElementsByTagName("ul");
+let txtCURP = document.getElementById("txtCURP");
+let txtRFC = document.getElementById("txtRFC");
+let txtTelefono = document.getElementById("txtTelefono");
 
 
 let elementos = document.getElementsByClassName("list-group-item");
@@ -10,6 +15,7 @@ let otroElemento = document.querySelector("ul>li");//primero
 
 let otrosElementos = document.querySelectorAll("ul>li");//todos
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 console.log(otrosElementos.length);
 
 console.log("otroElemento:", otroElemento);
@@ -68,4 +74,32 @@ btnMostrar.addEventListener("click", function(event){
                 Before end item
                 </li>` );
     
-});
+});//btnMostrar
+
+
+//Se ejecuta cuando termina de cargar todos los elementos de la pagina
+window.addEventListener("load",function(event){
+    console.log("Se termino de cargar la página");
+
+});//load
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////Funcion que ayuda a automatizar los procesos///////////////////////////////////////////////////////////////////////////////////////////////////// 
+function txtToUpper(event){
+    event.preventDefault();
+    event.target.value =event.target.value.trim().toUpperCase();
+}//txtToUpper
+
+//blur -> cuando sale del campo (pierde el foco)
+txtCURP.addEventListener("blur",txtToUpper);
+txtRFC.addEventListener("blur", txtToUpper);
+   
+txtTelefono.addEventListener("blur",function(event){
+    event.preventDefault();
+    txtTelefono.value = txtTelefono.value.trim().slice(0,10);
+
+});//txtTelefono
+ 
+
+
+
